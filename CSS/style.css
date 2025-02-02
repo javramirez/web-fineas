@@ -1214,10 +1214,22 @@ h3 {
     .paquete__h2 {
         font-size: 3rem;
     }
+    .sec-3 {
+        padding: 2rem 2rem;
+    }
     .sec-2 {
-        padding: 2rem 0.1rem;
+        padding-top: 1rem;
+    }
+}
+    .sec-1 {
+        margin: 4rem 5rem 1rem 5rem;
     }
 }
 
+@media (max-width: 450px) {
+    .precios__p{
+        display: none;
+    }
+}
 
 
