@@ -583,8 +583,10 @@ h3 {
 }
 
 .elemento__img {
-    height: 4rem;
-    width: fit-content;
+    width: auto;
+    max-width: 4rem;
+    height: auto;
+    max-height: 4rem;
     margin-right: 1rem;
 }
 
