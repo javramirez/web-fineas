@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>fineastech-form</title>
+    <link rel="icon" href="img/logo3.png" type="image/x-icon">
+    <link rel="preload" href="CSS/normalize.css" as="style">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="CSS/style_form.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navegacion navegacion__responsive">
+
+        <a class="navegacion__marca marca__responsive" href="index.html">
+            <img class="navegacion__marca-logo" src="img/logo.png" alt="">
+            <h3 class="navegacion_marca-texto">fineas</h3>
+        </a>
+
+        <div class="navegacion__nav nav__responsive">
+            <a class="boton" href="index.html">Vover al menu</a>
+        </div>
+
+    </nav>
+
+    <section class="sec-1 sec2__responsive">
+
+        <div class="flex-caja caja__responsive">
+
+            <div class="caja__info">
+                <img class="caja__img" src="img/graf-sec1.png" alt="graf-sec-1">
+            </div>
+
+            <div class="caja__graf caja-graf__responsive">
+
+                <form id="dataForm">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required><br><br>
+
+                    <label for="mail">Mail:</label>
+                    <input type="email" id="mail" name="mail" required><br><br>
+
+                    <label for="empresa">Empresa:</label>
+                    <input type="text" id="empresa" name="empresa" required><br><br>
+
+                    <label for="rut_empresa">RUT Empresa:</label>
+                    <input type="text" id="rut_empresa" name="rut_empresa" required><br><br>
+
+                    <label for="rubro">Rubro:</label>
+                    <input type="text" id="rubro" name="rubro" required><br><br>
+
+                    <label for="producto">Producto:</label>
+                    <input type="text" id="producto" name="producto" required><br><br>
+
+                    <button type="submit">Enviar</button>
+                </form>
+
+                <script>
+                    const form = document.getElementById('dataForm');
+                    const scriptURL = 'AKfycbxKhzShfh_iJ2s6ub3vZ35WxmJdHDpGxO_vM2Sjh9E68cEkomuVV0JeYA3QvxBNLKel'; // Reemplaza con la URL del Apps Script
+
+                    form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+
+                        const formData = new FormData(form);
+                        const data = Object.fromEntries(formData);
+
+                        fetch(scriptURL, {
+                            method: 'POST',
+                            body: new URLSearchParams(data),
+                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                        })
+                            .then(response => response.text())
+                            .then(data => alert("Datos enviados correctamente"))
+                            .catch(error => console.error("Error:", error));
+                    });
+                </script>
+
+            </div>
+
+        </div>
+
+    </section>
+
+   <footer class="footer">
+
+       <a class="footer__marca" href="index.html">
+
+           <img class="footer__marca-logo" src="img/logo.png" alt="logo">
+           <h3 class="footer__marca-texto">fineas</h3>
+
+       </a>
+
+       <p class="footer__texto footer__texto__responsive">Copyright © 2025 - fineastech</p>
+
+       <div class="footer__rrss">
+
+           <a href="https://www.instagram.com/fineascl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+               <img class="footer__logo-rrss" src="img/instagram.png" alt="Instagram">
+           </a>
+
+           <a href="https://www.linkedin.com/company/fineastech/?viewAsMember=true" target="_blank">
+               <img class="footer__logo-rrss" src="img/linkedin.png" alt="LinkedIn">
+           </a>
+
+       </div>
+
+   </footer>
+
+</body>
+
+</html>
