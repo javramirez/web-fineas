@@ -865,6 +865,13 @@ h3 {
     margin: 0;
 }
 
+.prelista {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+}
+
 .elemento__lista {
     color: var(--blanco);
     font-size: 1.5rem;
@@ -893,6 +900,18 @@ h3 {
 
 .precio__boton-sumup {
     background: var(--naranja);
+    color:var(--blanco);
+    padding: 1rem 4rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 1rem;
+    text-align: center;
+    border: none;
+    font-size: 3rem;
+}
+
+.precio__boton-fingo {
+    background: var(--primario);
     color:var(--blanco);
     padding: 1rem 4rem;
     text-decoration: none;
